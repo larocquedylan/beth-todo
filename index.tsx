@@ -86,7 +86,7 @@ function ToDoItem({ content, completed, id }: Todo) {
       <input
         type="checkbox"
         checked={completed}
-        hx-post={`/todos/toggle/:${id}`}
+        hx-post={`/todos/toggle/${id}`}
         hx-target="closest div"
         hx-swap="outerHTML"
       />
