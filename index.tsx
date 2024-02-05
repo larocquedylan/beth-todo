@@ -45,6 +45,20 @@ const app = new Elysia()
       }),
     }
   )
+  .delete(
+    "/todos/:id",
+    ({ params }) => {
+      const todo = db.find((todo) => todo.id == params.id);
+      if (todo) {
+        db.splice(db.indexOf(todo), 1);
+      }
+    },
+    {
+      params: t.Object({
+        id: t.Numeric(),
+      }),
+    }
+  )
   .listen(3214);
 
 console.log(
