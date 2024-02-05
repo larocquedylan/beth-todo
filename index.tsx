@@ -88,6 +88,7 @@ function ToDoItem({ content, completed, id }: Todo) {
         checked={completed}
         hx-post={`/todos/toggle/:${id}`}
         hx-target="closest div"
+        hx-swap="outerHTML"
       />
       <button class="text-red-500">X</button>
     </div>
